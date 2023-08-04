@@ -167,7 +167,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 # login index
 LOGIN_URL = 'login'
 
-X = '12312312'
+X = '123123aaaa12'
 
 CORS_ALLOW_METHODS = (
     "GET",
