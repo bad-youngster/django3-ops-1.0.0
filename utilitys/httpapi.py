@@ -7,11 +7,13 @@ import requests
 
 def nexus_api(method, uri, query_params, headers):
     vm_url = settings.NEXUS_API + uri
+    auth = (settings.NEXUS_USER, settings.NEXUS_PASS)
     try:
         response = requests.request(method,
                                     vm_url,
                                     params=query_params,
-                                    headers=headers)
+                                    headers=headers,
+                                    auth=auth)
         # Raise an exception if the request was unsuccessful
         response.raise_for_status()
         # Decode the response content as JSON, if applicable

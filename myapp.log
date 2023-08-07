@@ -1,0 +1,79 @@
+2023-08-07 11:02:06,941 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 11:04:47,433 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 11:04:53,124 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET / HTTP/1.1" 200 10633
+2023-08-07 11:04:53,231 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+2023-08-07 11:04:53,377 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+2023-08-07 11:04:53,380 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+2023-08-07 11:04:53,385 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+2023-08-07 11:04:53,846 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Not Found: /favicon.ico
+2023-08-07 11:04:53,847 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /favicon.ico HTTP/1.1" 404 2114
+2023-08-07 18:01:39,659 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:02:32,230 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:03:35,405 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Not Found: /ops/nexusDownfile
+2023-08-07 18:03:35,406 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile HTTP/1.1" 404 2319
+2023-08-07 18:03:44,764 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
+Traceback (most recent call last):
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
+    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
+AttributeError: 'dict' object has no attribute 'headers'
+2023-08-07 18:03:44,766 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62590
+2023-08-07 18:05:17,608 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:06:05,539 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
+Traceback (most recent call last):
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
+    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
+AttributeError: 'dict' object has no attribute 'headers'
+2023-08-07 18:06:05,541 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62451
+2023-08-07 18:10:00,379 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:10:03,705 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
+Traceback (most recent call last):
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
+    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
+AttributeError: 'dict' object has no attribute 'headers'
+2023-08-07 18:10:03,707 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62451
+2023-08-07 18:10:07,790 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
+Traceback (most recent call last):
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
+    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
+AttributeError: 'dict' object has no attribute 'headers'
+2023-08-07 18:10:07,792 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62451
+2023-08-07 18:10:38,879 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:10:56,040 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
+Traceback (most recent call last):
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
+    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
+AttributeError: 'dict' object has no attribute 'headers'
+2023-08-07 18:10:56,043 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62590
+2023-08-07 18:13:38,527 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:13:43,005 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
+2023-08-07 18:14:32,811 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:14:36,023 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
+2023-08-07 18:14:53,894 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:15:03,516 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:15:05,759 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
+2023-08-07 18:15:45,488 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:15:47,997 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
+2023-08-07 18:16:02,723 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:16:06,250 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
+2023-08-07 18:16:53,205 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-07 18:16:56,644 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
