@@ -3,8 +3,7 @@
 # @Author: wy
 from utilitys.httpapi import nexus_api
 
-
-class NexusStore():
+class NexusStore:
 
     def nexus_upload(self):
         uri = 'v1/components/'
@@ -14,7 +13,10 @@ class NexusStore():
                                              uri=uri,
                                              query_params=query_params,
                                              headers=headers)
-        print(result_code)
+        if result_code == 200:
+            return result_data
+        else:
+            return result_code, result_data
 
     def nexus_download(self):
         pass
