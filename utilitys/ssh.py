@@ -19,12 +19,12 @@ class Ssh:
         self.__k = None
 
     def connect(self):
-        transport = Transport((self.host, self.port))
+        transport = Transport((self.host, int(self.port)))
         transport.connect(username=self.username, password=self.pwd)
-        self.__transport = transport
+        return transport
 
     def close(self):
-        self.__transport.close()
+        self.connect().close()
 
     def run_cmd(self, command):
         """
@@ -35,7 +35,7 @@ class Ssh:
         :return:
         """
         ssh = SSHClient()
-        ssh._transport = self.__transport
+        ssh._transport = self.connect()
         # 执行命令
         stdin, stdout, stderr = ssh.exec_command(command)
         # 获取命令结果
@@ -45,13 +45,13 @@ class Ssh:
         # 如果有错误信息，返回error
         # 否则返回res
         if error.strip():
-            return {'color': 'red', 'res': error}
+            return {'code': 400, 'res': error}
         else:
-            return {'color': 'green', 'res': res}
+            return {'code': 200, 'res': res}
 
     def upload(self, local_path, target_path):
         # 连接，上传
-        sftp = SFTPClient.from_transport(self.__transport)
+        sftp = SFTPClient.from_transport(self.connect())
         # 将location.py 上传至服务器 /tmp/test.py
         sftp.put(local_path, target_path, confirm=True)
         # print(os.stat(local_path).st_mode)
@@ -61,7 +61,7 @@ class Ssh:
 
     def download(self, target_path, local_path):
         # 连接，下载
-        sftp = SFTPClient.from_transport(self.__transport)
+        sftp = SFTPClient.from_transport(self.connect())
         # 将location.py 下载至服务器 /tmp/test.py
         sftp.get(target_path, local_path)
 

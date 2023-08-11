@@ -1,397 +1,241 @@
-2023-08-07 11:02:06,941 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 11:04:47,433 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 11:04:53,124 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET / HTTP/1.1" 200 10633
-2023-08-07 11:04:53,231 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
-2023-08-07 11:04:53,377 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
-2023-08-07 11:04:53,380 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
-2023-08-07 11:04:53,385 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
-2023-08-07 11:04:53,846 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Not Found: /favicon.ico
-2023-08-07 11:04:53,847 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /favicon.ico HTTP/1.1" 404 2114
-2023-08-07 18:01:39,659 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:02:32,230 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:03:35,405 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Not Found: /ops/nexusDownfile
-2023-08-07 18:03:35,406 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile HTTP/1.1" 404 2319
-2023-08-07 18:03:44,764 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
-Traceback (most recent call last):
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
-    response = self.process_response(request, response)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
-    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
-AttributeError: 'dict' object has no attribute 'headers'
-2023-08-07 18:03:44,766 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62590
-2023-08-07 18:05:17,608 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:06:05,539 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
-Traceback (most recent call last):
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
-    response = self.process_response(request, response)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
-    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
-AttributeError: 'dict' object has no attribute 'headers'
-2023-08-07 18:06:05,541 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62451
-2023-08-07 18:10:00,379 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:10:03,705 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
-Traceback (most recent call last):
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
-    response = self.process_response(request, response)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
-    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
-AttributeError: 'dict' object has no attribute 'headers'
-2023-08-07 18:10:03,707 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62451
-2023-08-07 18:10:07,790 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
-Traceback (most recent call last):
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
-    response = self.process_response(request, response)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
-    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
-AttributeError: 'dict' object has no attribute 'headers'
-2023-08-07 18:10:07,792 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62451
-2023-08-07 18:10:38,879 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:10:56,040 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusDownfile/
-Traceback (most recent call last):
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
-    response = self.process_response(request, response)
-  File "/opt/microMonitor/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 33, in process_response
-    response.headers['X-Frame-Options'] = self.get_xframe_options_value(
-AttributeError: 'dict' object has no attribute 'headers'
-2023-08-07 18:10:56,043 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 500 62590
-2023-08-07 18:13:38,527 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:13:43,005 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
-2023-08-07 18:14:32,811 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:14:36,023 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
-2023-08-07 18:14:53,894 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:15:03,516 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:15:05,759 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
-2023-08-07 18:15:45,488 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:15:47,997 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
-2023-08-07 18:16:02,723 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:16:06,250 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
-2023-08-07 18:16:53,205 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-07 18:16:56,644 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusDownfile/ HTTP/1.1" 200 15
-2023-08-08 08:49:48,271 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 08:49:52,450 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 08:52:29,383 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 08:52:32,230 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 08:54:41,000 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 08:54:43,400 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 08:55:12,342 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 08:55:15,052 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:38:39,239 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 10:38:56,130 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+2023-08-10 14:45:03,694 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 14:45:47,238 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/userGet/ HTTP/1.1" 200 2
+2023-08-10 14:46:00,897 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/userAdd/ HTTP/1.1" 200 0
+2023-08-10 14:46:00,961 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/userAdd/ HTTP/1.1" 200 48
+2023-08-10 14:54:37,087 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 14:55:08,516 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 14:55:57,080 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/userAdd/ HTTP/1.1" 200 48
+2023-08-10 14:56:18,175 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/userGet/ HTTP/1.1" 200 85
+2023-08-10 15:22:14,185 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:22:14,266 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
+2023-08-10 15:22:15,388 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:22:15,449 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
+2023-08-10 15:22:16,366 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:22:16,433 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
+2023-08-10 15:22:16,821 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:22:16,940 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
+2023-08-10 15:26:09,554 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 10, in nexus_infofile
-    for asset in i.get('assets'):
-AttributeError: 'str' object has no attribute 'get'
-2023-08-08 10:38:56,132 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 500 66707
-2023-08-08 10:39:38,830 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 10:39:40,581 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 73, in mysql_install
+    xx = Ssh(result).run_cmd('ls')
+  File "/root/python/django3ops/utilitys/ssh.py", line 15, in __init__
+    self.host = host_dict['host']
+KeyError: 'host'
+2023-08-10 15:26:09,556 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 67746
+2023-08-10 15:26:49,503 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 15:26:58,180 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 15:28:14,250 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 15:28:44,221 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 15:29:09,666 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 15:29:14,032 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 11, in nexus_infofile
-    for asset in i.get('assets'):
-AttributeError: 'str' object has no attribute 'get'
-2023-08-08 10:39:40,585 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 500 66723
-2023-08-08 10:40:19,223 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 10:40:39,372 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:42:43,234 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 10:42:46,988 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:51:39,743 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 10:51:52,274 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:53:35,177 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:53:35,539 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:53:36,036 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:53:36,396 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 10:54:09,124 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 10:54:18,950 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 10:54:56,474 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 10:54:56,919 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 10:55:32,821 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:16,933 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:22,423 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:39,468 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:39,989 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:40,425 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:41,028 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:41,831 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:01:42,481 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:20:43,353 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:20:55,653 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 11:21:00,353 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:21:20,389 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 11:21:22,439 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 11:22:24,069 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:22:24,084 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/nexusInfofile/ HTTP/1.1" 200 0
-2023-08-08 11:22:24,095 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 11:22:24,887 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:22:24,896 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 11:24:44,490 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:24:44,501 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 11:25:28,506 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:25:28,514 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 11:25:36,194 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:25:36,204 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 11:25:56,321 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 11:25:56,333 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 13:11:54,833 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 13:37:40,146 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 13:37:40,174 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/nexusInfofile/ HTTP/1.1" 200 0
-2023-08-08 13:37:40,180 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 13:37:42,259 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 13:37:42,268 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 13:37:44,074 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 13:37:44,084 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 13:37:44,400 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 13:37:44,410 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 13:37:44,623 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 13:37:44,631 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 13:59:25,984 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 13:59:28,339 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 14:05:35,936 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 75, in mysql_install
+    print(host_ip.hostip)
+AttributeError: 'QuerySet' object has no attribute 'hostip'
+2023-08-10 15:29:14,034 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 63919
+2023-08-10 15:32:11,444 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 15:32:14,883 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 15:32:46,412 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 15:32:49,182 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 15:47:02,651 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:47:02,669 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/nexusInfofile/ HTTP/1.1" 200 0
+2023-08-10 15:47:02,721 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
+2023-08-10 15:47:03,550 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:47:03,609 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
+2023-08-10 15:47:03,853 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:47:03,939 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
+2023-08-10 15:47:04,453 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
+2023-08-10 15:47:04,523 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
+2023-08-10 15:47:05,602 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/mysqlInstall/ HTTP/1.1" 200 0
+2023-08-10 15:47:05,620 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 15:50:15,652 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 15:50:17,669 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 15:53:50,694 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 15:53:55,781 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 12, in nexus_infofile
-    result = NexusStore.nexus_upload()
-TypeError: NexusStore.nexus_upload() missing 1 required positional argument: 'self'
-2023-08-08 14:05:35,940 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 500 64019
-2023-08-08 14:08:31,815 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 75, in mysql_install
+    combined_results = Assets.objects.filter(combined_query)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1288, in build_filter
+    return self._add_q(
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1309, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1135, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1562, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'assets' into field. Choices are: hostip, hostname, id, port
+2023-08-10 15:53:55,807 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 120704
+2023-08-10 16:13:51,698 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:14:02,070 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:16:33,715 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:16:44,491 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 12, in nexus_infofile
-    result = NexusStore.nexus_upload()
-TypeError: NexusStore.nexus_upload() missing 1 required positional argument: 'self'
-2023-08-08 14:08:31,818 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 500 63186
-2023-08-08 14:11:59,959 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 14:12:01,756 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:15:54,042 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:15:54,052 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 14:30:43,106 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:30:43,116 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 14:30:46,774 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:30:46,787 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 14:55:15,271 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:55:15,282 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 14:55:32,989 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:55:33,001 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 14:55:54,156 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:56:06,661 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:56:07,661 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:56:31,251 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:56:31,263 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 14:56:40,690 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 14:56:40,702 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:01:57,540 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:01:57,550 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:01:58,070 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:01:58,081 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:01:59,545 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:01:59,555 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:02:29,779 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:02:37,235 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:02:37,245 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:02:37,757 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:02:37,767 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:03:27,941 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:03:30,484 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:03:30,576 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 77, in mysql_install
+    combined_results = list(authors.update(asset))
+TypeError: QuerySet.update() takes 1 positional argument but 2 were given
+2023-08-10 16:16:44,493 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 65095
+2023-08-10 16:17:31,465 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:17:35,207 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 10, in nexus_infofile
-    path_name = json.loads(request.data)
-AttributeError: 'WSGIRequest' object has no attribute 'data'
-2023-08-08 15:03:30,577 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 500 63850
-2023-08-08 15:03:30,782 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:03:30,857 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 78, in mysql_install
+    combined_results = list(authors.update(asset))
+TypeError: QuerySet.update() takes 1 positional argument but 2 were given
+2023-08-10 16:17:35,209 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 65073
+2023-08-10 16:25:24,348 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:25:28,405 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:38:00,773 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:38:06,742 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:39:54,401 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:39:56,339 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:40:17,277 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:40:20,295 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:41:24,364 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:41:27,432 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:42:25,908 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:42:29,533 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:42:52,258 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:42:55,451 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 16:43:21,636 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:43:23,490 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 10, in nexus_infofile
-    path_name = json.loads(request.data)
-AttributeError: 'WSGIRequest' object has no attribute 'data'
-2023-08-08 15:03:30,866 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 500 63850
-2023-08-08 15:04:21,111 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:04:24,978 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:04:24,990 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:04:25,636 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:04:25,648 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:04:38,707 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:04:41,795 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:04:41,863 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:04:41,877 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 83, in mysql_install
+    xx = Ssh(combined_results).run_cmd('ls')
+  File "/root/python/django3ops/utilitys/ssh.py", line 38, in run_cmd
+    ssh._transport = self.__transport
+AttributeError: 'Ssh' object has no attribute '_Ssh__transport'
+2023-08-10 16:43:23,492 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 69916
+2023-08-10 16:51:48,456 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:51:53,526 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 10, in nexus_infofile
-    path_name = json.loads(request.data)
-AttributeError: 'WSGIRequest' object has no attribute 'data'
-2023-08-08 15:04:41,891 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 500 63850
-2023-08-08 15:04:41,928 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 83, in mysql_install
+    xx = Ssh(combined_results).run_cmd('ls')
+  File "/root/python/django3ops/utilitys/ssh.py", line 38, in run_cmd
+    ssh._transport = self._transport
+AttributeError: 'Ssh' object has no attribute '_transport'
+2023-08-10 16:51:53,529 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 69894
+2023-08-10 16:55:51,224 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:55:55,779 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 10, in nexus_infofile
-    path_name = json.loads(request.data)
-AttributeError: 'WSGIRequest' object has no attribute 'data'
-2023-08-08 15:04:41,929 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 500 63850
-2023-08-08 15:04:42,357 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:04:42,406 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/nexusInfofile/
+  File "/root/python/django3ops/app/views.py", line 83, in mysql_install
+    xx = Ssh(combined_results).run_cmd('ls')
+  File "/root/python/django3ops/utilitys/ssh.py", line 38, in run_cmd
+    ssh._transport = self.connect()
+  File "/root/python/django3ops/utilitys/ssh.py", line 22, in connect
+    transport = Transport((self.host, self.port))
+  File "/opt/microMonitor/lib/python3.10/site-packages/paramiko/transport.py", line 442, in __init__
+    sock.connect((hostname, port))
+TypeError: 'str' object cannot be interpreted as an integer
+2023-08-10 16:55:55,785 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 80398
+2023-08-10 16:57:15,250 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:57:17,630 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
 Traceback (most recent call last):
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/root/python/django3ops/app/views.py", line 10, in nexus_infofile
-    path_name = json.loads(request.data)
-AttributeError: 'WSGIRequest' object has no attribute 'data'
-2023-08-08 15:04:42,407 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 500 63850
-2023-08-08 15:04:57,127 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:05:02,195 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:05:02,213 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:05:02,405 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:05:02,416 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:05:26,868 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:05:35,579 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:05:35,591 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:05:36,395 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:05:36,405 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:18:24,355 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:18:31,952 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:18:32,051 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:18:32,529 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:18:32,630 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 15
-2023-08-08 15:20:02,711 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 15:20:53,146 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:20:53,216 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:20:53,577 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:20:53,681 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:22:02,081 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:02,177 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 15:22:03,202 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:03,271 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 15:22:04,236 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:04,299 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 15:22:05,320 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:05,380 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 15:22:06,860 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:06,951 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 15:22:53,924 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:54,137 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 15:22:54,580 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:54,660 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:22:55,112 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:55,184 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:22:57,520 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:57,588 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:22:57,996 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:22:58,060 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:05,817 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:05,870 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:06,507 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:06,554 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:08,687 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:08,749 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:10,736 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:10,812 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:11,386 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:11,480 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 144
-2023-08-08 15:23:11,790 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:11,852 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 144
-2023-08-08 15:23:25,508 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:25,721 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 144
-2023-08-08 15:23:36,150 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:36,210 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 144
-2023-08-08 15:23:36,755 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:36,801 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:37,909 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:37,957 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:39,711 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:39,774 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:23:40,584 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:40,653 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 144
-2023-08-08 15:23:40,960 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:23:41,009 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 144
-2023-08-08 15:32:40,206 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:32:40,285 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 15:32:40,757 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:32:40,835 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:32:41,166 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:32:41,277 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:32:42,449 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:32:42,514 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 15:32:42,843 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 15:32:42,891 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 16:14:29,983 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 16:14:29,997 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/nexusInfofile/ HTTP/1.1" 200 0
-2023-08-08 16:14:30,047 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 16:14:36,549 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 16:14:36,600 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-08 16:14:37,013 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 16:14:37,089 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 16:14:37,444 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 16:14:37,515 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 16:14:38,206 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-08 16:14:38,263 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-08 17:33:24,883 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-08 17:33:34,262 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/mysqlInstall/ HTTP/1.1" 200 15
-2023-08-08 17:35:51,622 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
-2023-08-09 10:12:17,619 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
-2023-08-09 10:12:33,353 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:12:33,382 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/nexusInfofile/ HTTP/1.1" 200 0
-2023-08-09 10:12:33,516 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-09 10:12:34,371 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:12:34,428 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-09 10:12:34,946 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:12:35,057 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-09 10:12:35,407 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:12:35,511 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-09 10:12:35,846 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:12:35,917 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-09 10:12:36,690 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:12:36,764 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-09 10:12:37,315 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/mysqlInstall HTTP/1.1" 200 0
-2023-08-09 10:12:37,337 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Not Found: /ops/mysqlInstall
-2023-08-09 10:12:37,338 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall HTTP/1.1" 404 2502
-2023-08-09 10:13:03,089 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Not Found: /ops/mysqlInstall
-2023-08-09 10:13:03,090 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall HTTP/1.1" 404 2502
-2023-08-09 10:13:36,400 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:13:36,474 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 2
-2023-08-09 10:13:37,162 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:13:37,232 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-09 10:13:37,934 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:13:38,050 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-09 10:13:38,655 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /ops/nexusInfofile/ HTTP/1.1" 200 296
-2023-08-09 10:13:38,816 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/nexusInfofile/ HTTP/1.1" 200 152
-2023-08-09 10:13:39,411 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/mysqlInstall/ HTTP/1.1" 200 0
-2023-08-09 10:13:39,417 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
-2023-08-09 10:50:26,617 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Not Found: /micro/aliyun/aliyunAssets/
-2023-08-09 10:50:26,620 [WARNING] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "GET /micro/aliyun/aliyunAssets/ HTTP/1.1" 404 2263
+  File "/root/python/django3ops/app/views.py", line 83, in mysql_install
+    xx = Ssh(combined_results).run_cmd('ls')
+  File "/root/python/django3ops/utilitys/ssh.py", line 39, in run_cmd
+    ssh._transport = self.connect()
+  File "/root/python/django3ops/utilitys/ssh.py", line 23, in connect
+    transport = Transport((self.host, self.port))
+  File "/opt/microMonitor/lib/python3.10/site-packages/paramiko/transport.py", line 442, in __init__
+    sock.connect((hostname, port))
+TypeError: 'str' object cannot be interpreted as an integer
+2023-08-10 16:57:17,633 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 80381
+2023-08-10 16:57:43,510 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:57:45,166 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
+Traceback (most recent call last):
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/python/django3ops/app/views.py", line 83, in mysql_install
+    xx = Ssh(combined_results).run_cmd('ls')
+  File "/root/python/django3ops/utilitys/ssh.py", line 39, in run_cmd
+    ssh._transport = self.connect()
+  File "/root/python/django3ops/utilitys/ssh.py", line 23, in connect
+    transport = Transport((self.host, self.port))
+  File "/opt/microMonitor/lib/python3.10/site-packages/paramiko/transport.py", line 442, in __init__
+    sock.connect((hostname, port))
+TypeError: 'str' object cannot be interpreted as an integer
+2023-08-10 16:57:45,170 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 80375
+2023-08-10 16:58:59,063 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 16:59:05,123 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/utils/log.py:224 Internal Server Error: /ops/mysqlInstall/
+Traceback (most recent call last):
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/opt/microMonitor/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/python/django3ops/app/views.py", line 83, in mysql_install
+    xx = Ssh(combined_results).run_cmd('ls')
+  File "/root/python/django3ops/utilitys/ssh.py", line 38, in run_cmd
+    ssh._transport = self.connect()
+  File "/root/python/django3ops/utilitys/ssh.py", line 23, in connect
+    transport.connect(username=self.username, password=self.pwd)
+  File "/opt/microMonitor/lib/python3.10/site-packages/paramiko/transport.py", line 1414, in connect
+    self.auth_password(username, password)
+  File "/opt/microMonitor/lib/python3.10/site-packages/paramiko/transport.py", line 1587, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/opt/microMonitor/lib/python3.10/site-packages/paramiko/auth_handler.py", line 263, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+2023-08-10 16:59:05,126 [ERROR] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 500 88153
+2023-08-10 17:01:18,330 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 17:27:01,298 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 17:27:08,419 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 17:36:38,805 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 17:36:47,392 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 17:38:23,167 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 17:39:03,044 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 17:55:53,624 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 17:55:57,981 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "OPTIONS /ops/mysqlInstall/ HTTP/1.1" 200 0
+2023-08-10 17:56:01,809 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
+2023-08-10 17:56:57,450 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/utils/autoreload.py:637 Watching for file changes with StatReloader
+2023-08-10 17:57:04,888 [INFO] /opt/microMonitor/lib/python3.10/site-packages/django/core/servers/basehttp.py:161 "POST /ops/mysqlInstall/ HTTP/1.1" 200 15
