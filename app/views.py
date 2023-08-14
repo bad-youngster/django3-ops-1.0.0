@@ -16,6 +16,7 @@ def user_add(request):
         print(result)
         user_type = UserType.objects.create(type=int(result.get('type')))
         data, code = UserAuth.objects.get_or_create(
+            nickname=result.get('nickname'),
             username=result.get('username'),
             passwd=result.get('password'),
             type=user_type)
@@ -31,6 +32,7 @@ def user_get(request):
     user = []
     for c in code:
         q = {}
+        q['nickname'] = c.nickname
         q['username'] = c.username
         q['passwd'] = c.passwd
         if int(c.type.type) == 1:
@@ -47,30 +49,36 @@ def nexus_infofile(request):
     if request.method == 'POST':
         path_name = json.loads(request.body)
         result = NexusStore().nexus_upload()
-        infofile = []
+        assets = []
         for i in result.get('items'):
             for asset in i.get('assets'):
-                assets = {}
+                c = {}
                 if path_name.get('type') == asset.get('path').split('/')[0]:
-                    assets['downlaod_url'] = asset.get('downloadUrl')
-                    assets['path'] = asset.get('path').split('/')[0]
-                    infofile.append(assets)
-        return JsonResponse(infofile, safe=False)
+                    c['downlaod_url'] = asset.get('downloadUrl')
+                    c['path'] = asset.get('path').split('/')[0]
+                    assets.append(c)
+        return JsonResponse(assets, safe=False)
     result = NexusStore().nexus_upload()
-    infofile = []
+    assets = []
     for i in result.get('items'):
         for asset in i.get('assets'):
-            print(asset)
-            assets = {}
-            assets['downlaod_url'] = asset.get('downloadUrl')
-            assets['path'] = asset.get('path').split('/')[0]
-            infofile.append(assets)
-    return JsonResponse(infofile, safe=False)
+            c = {}
+            c['downlaod_url'] = asset.get('downloadUrl')
+            c['path'] = asset.get('path').split('/')[0]
+            assets.append(c)
+    return JsonResponse(assets, safe=False)
 
 
 def nexus_mysql_script(request):
     result = NexusStore().nexus_mysql_script()
-    print(result)
+    assets = []
+    for i in result.get('items'):
+        for asset in i.get('assets'):
+            c = {}
+            c['downlaod_url'] = asset.get('downloadUrl')
+            c['path'] = asset.get('path').split('/')[1]
+            assets.append(c)
+    return JsonResponse(assets, safe=False)
 
 
 def mysql_install(request):
@@ -79,7 +87,7 @@ def mysql_install(request):
         ip = result.get('ip')
         auth = result.get('user')
         authors = UserAuth.objects.values('username',
-                                          'passwd').filter(username=auth)
+                                          'passwd').filter(nickname=auth)
         asset = Assets.objects.values('hostip', 'port').filter(hostip=ip)
         combined_results = {}
         for i in list(authors):
@@ -89,11 +97,24 @@ def mysql_install(request):
             combined_results['host'] = y.get('hostip')
             combined_results['port'] = y.get('port')
         down_url = result.get('download_url')
+        script_url = result.get('script_download_url')
 
-        res = Ssh(combined_results).run_cmd(
-            'wget --user=%s --password=%s %s' %
-            (settings.NEXUS_USER, settings.NEXUS_PASS, down_url))
-        res_match = re.search(r"/([^/]+)$", down_url).group(1)
+        script_cmd = 'wget --user=%s --password=%s %s ' % (
+            settings.NEXUS_USER, settings.NEXUS_PASS, script_url)
+        down_cmd = 'wget --user=%s --password=%s %s' % (
+            settings.NEXUS_USER, settings.NEXUS_PASS, down_url)
+
+        res_match_down = re.search(r"/([^/]+)$", down_url).group(1)
+        res_match_script = re.search(r"/([^/]+)$", script_url).group(1)
+
+        res = Ssh(combined_results).run_cmd('%s;%s' % (script_cmd, down_cmd))
+        print(res)
+        res1 = Ssh(combined_results).run_cmd(
+            'mv %s %s /opt/' % (res_match_down, res_match_script))
+        print(res_match_down, res_match_script)
+        res2 = Ssh(combined_results).run_cmd(
+            'cd /opt;sh -x %s %s' % (res_match_script, res_match_down))
+        print(res2)
 
         return JsonResponse({'status': 200})
     Mysql().install()
