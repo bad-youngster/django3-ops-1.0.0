@@ -1,4 +1,5 @@
 from django.http import JsonResponse
+from aliyunControls.views import aliyunEcs
 from app.mysqlInstall.mysqlInstall import Mysql
 from nexusControls.views import NexusStore
 import json
@@ -118,4 +119,26 @@ def mysql_install(request):
 
         return JsonResponse({'status': 200})
     Mysql().install()
+    return JsonResponse({'status': 200})
+
+
+def get_single_ecs(request):
+    result = aliyunEcs().aliyun_get_single_ecs()
+    instace = result.body.instances.instance
+    instaces = []
+    for i in instace:
+        q = {}
+        q['instace'] = i
+        instaces.append(q)
+    print(instaces)
+    return JsonResponse(instaces, safe=False)
+
+
+def select_single_ecs(request):
+    pass
+
+
+def mysql_to_slave(request):
+    aliyunEcs().aliyun_create_single_ecs()
+
     return JsonResponse({'status': 200})

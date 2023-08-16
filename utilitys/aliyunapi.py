@@ -22,10 +22,10 @@ class aliyun:
         config.endpoint = f'ecs.cn-shanghai.aliyuncs.com'
         return Ecs20140526Client(config)
 
-    def aliyun_ecs_api(self) -> Ecs20140526Client:
+    def aliyun_ecs_api(self):
         try:
             client = aliyun.create_client(settings.ALIYUN_ACCESS_KEY_ID,
                                           settings.ALIYUN_ACCESS_KEY_SECRET)
-            return Ecs20140526Client(client)
+            return client
         except Exception as error:
             return error
