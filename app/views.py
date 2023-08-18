@@ -128,14 +128,22 @@ def get_single_ecs(request):
     instaces = []
     for i in instace:
         q = {}
-        q['instace'] = i
+        q['InstanceId'] = i.instance_id
+        q['InstanceName'] = i.instance_name
+        q['RegionId'] = i.region_id
         instaces.append(q)
-    print(instaces)
     return JsonResponse(instaces, safe=False)
 
 
 def select_single_ecs(request):
-    pass
+    if request.method == 'POST':
+        result_body = json.loads(request.body)
+        result_data = aliyunEcs().aliyun_select_single_ecs(result_body)
+        aliyunEcs().snap_single_ecs(result_body)
+
+        return JsonResponse({'status': 200})
+
+    return JsonResponse({'status': 200})
 
 
 def mysql_to_slave(request):

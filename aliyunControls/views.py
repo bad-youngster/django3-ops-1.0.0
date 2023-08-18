@@ -39,6 +39,31 @@ class aliyunEcs:
         except Exception as error:
             return (error)
 
+    def aliyun_select_single_ecs(self, args_dict):
+        describe_instances_request = ecs_20140526_models.DescribeInstancesRequest(
+            region_id=args_dict['regionId'],
+            instance_ids=list(args_dict['instanceId']))
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api().describe_instances_with_options(
+                describe_instances_request, runtime)
+            return result
+        except Exception as error:
+            return error
+
+    def snap_single_ecs(slef, args_dict):
+        describe_snapshots_request = ecs_20140526_models.DescribeSnapshotsRequest(
+            region_id=args_dict['regionId'],
+            instance_id=args_dict['instanceId'])
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api().describe_snapshots_with_options(
+                describe_snapshots_request, runtime)
+            print(result)
+            return result
+        except Exception as error:
+            return error
+
     def aliyun_create_single_ecs(self):
         data_disk_0 = ecs_20140526_models.RunInstancesRequestDataDisk(
             snapshot_id='s-uf6i6pgbxx52mdnsk3r1')
