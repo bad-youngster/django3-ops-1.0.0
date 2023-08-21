@@ -139,7 +139,27 @@ def select_single_ecs(request):
     if request.method == 'POST':
         result_body = json.loads(request.body)
         result_data = aliyunEcs().aliyun_select_single_ecs(result_body)
-        aliyunEcs().snap_single_ecs(result_body)
+        result_instances = result_data.body.instances.instance
+        result_snap_data = aliyunEcs().select_snapshots_single_ecs(result_body)
+        for s in result_snap_data:
+            if s.get('SourceDiskType') == 'data':
+                data_snapshotId = s.get('SnapshotId')
+        result_snap_image = aliyunEcs().aliyun_create_image(result_snap_data)
+        if result_snap_image.status_code == 200:
+            image_id = result_snap_image.body.image_id
+        instances = []
+        for i in result_instances:
+            instance = {}
+            instance['InstanceType'] = i.instance_type
+            instance['KeyPairName'] = i.key_pair_name
+            instance['Tags'] = i.tags
+            instance['VSwitchId'] = i.vpc_attributes.v_switch_id
+            instance[
+                'SecurityGroupIds'] = i.security_group_ids.security_group_id
+            instance['imageId'] = image_id
+            instance['data_snapid'] = data_snapshotId
+            instances.append(instance)
+            aliyunEcs().aliyun_create_single_ecs(instance)
 
         return JsonResponse({'status': 200})
 

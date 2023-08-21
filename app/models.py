@@ -57,3 +57,21 @@ class Assets(models.Model):
 
     def __str__(self) -> str:
         return self.hostname
+
+
+class AliyunAssets(models.Model):
+    regionId = models.CharField(verbose_name=("区域地方"), max_length=50)
+    instanceIds = models.CharField(verbose_name=("实例id"), max_length=50)
+    dataSnapshotId = models.CharField(verbose_name=("数据盘快照id"), max_length=50)
+    instanceName = models.CharField(verbose_name=("实例名称"), max_length=50)
+    instanceType = models.CharField(verbose_name=("实例类型"), max_length=50)
+    instanceChargeType = models.CharField(verbose_name=("付费模式"), max_length=50)
+    keyPairName = models.CharField(verbose_name=("密钥名称"), max_length=50)
+    securityGroupId = models.CharField(verbose_name=("安全组id"), max_length=50)
+    vSwitchId = models.CharField(verbose_name=("虚拟交换机"), max_length=50)
+
+    class Meta:
+        db_table = 'aliyun_assets'
+
+    def __str__(self) -> str:
+        return self.regionId
