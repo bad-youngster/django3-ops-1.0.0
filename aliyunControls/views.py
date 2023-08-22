@@ -7,12 +7,44 @@ from alibabacloud_ecs20140526 import models as ecs_20140526_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
 from utilitys.utctime import utf_time, now_time
+from app.models import AliyunEcsAssets, AliyunDescribeRegions
+from django.core.serializers import serialize
+import json
 
 
 class aliyunEcs:
 
     def __init__(self) -> None:
         pass
+
+    def aliyun_ecs_assets(self):
+        aliyunEcsAssets = AliyunEcsAssets.objects.all()
+        serialize_aliyunEcsAssets = json.loads(
+            serialize('json', aliyunEcsAssets))
+        fields = []
+        for s in serialize_aliyunEcsAssets:
+            fields.append(s['fields'])
+        return fields
+
+    def aliyun_ecs_regions(self):
+        aliyunDescribeRegions = AliyunDescribeRegions.objects.all()
+        serialize_aliyunDescribeRegions = json.loads(
+            serialize('json', aliyunDescribeRegions))
+        fields = []
+        for s in serialize_aliyunDescribeRegions:
+            fields.append(s['fields'])
+        return fields
+
+    def aliyun_region_instance_ecs(self, regionId):
+        print(regionId)
+        regionInstanceEcs = AliyunEcsAssets.objects.all().filter(
+            regionId=regionId)
+        serialize_regionInstanceEcs = json.loads(
+            serialize('json', regionInstanceEcs))
+        fields = []
+        for s in serialize_regionInstanceEcs:
+            fields.append(s['fields'])
+        return fields
 
     def aliyun_create_image(self, args_dict):
         for a in args_dict:

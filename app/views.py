@@ -123,16 +123,13 @@ def mysql_install(request):
 
 
 def get_single_ecs(request):
-    result = aliyunEcs().aliyun_get_single_ecs()
-    instace = result.body.instances.instance
-    instaces = []
-    for i in instace:
-        q = {}
-        q['InstanceId'] = i.instance_id
-        q['InstanceName'] = i.instance_name
-        q['RegionId'] = i.region_id
-        instaces.append(q)
-    return JsonResponse(instaces, safe=False)
+    result = aliyunEcs().aliyun_ecs_assets()
+    return JsonResponse(result, safe=False)
+
+
+def get_describe_regions(request):
+    result = aliyunEcs().aliyun_ecs_regions()
+    return JsonResponse(result, safe=False)
 
 
 def select_single_ecs(request):
@@ -170,3 +167,14 @@ def mysql_to_slave(request):
     aliyunEcs().aliyun_create_single_ecs()
 
     return JsonResponse({'status': 200})
+
+
+def aliyun_ecs_assets(request):
+    if request.method == 'POST':
+        results = json.loads(request.body)
+        region_result = aliyunEcs().aliyun_region_instance_ecs(
+            results['regionId'])
+        print(region_result)
+        
+    result = aliyunEcs().aliyun_ecs_assets()
+    return JsonResponse(result, safe=False)
