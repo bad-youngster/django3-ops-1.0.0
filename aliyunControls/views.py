@@ -4,6 +4,7 @@
 
 from utilitys.aliyunapi import aliyun
 from alibabacloud_ecs20140526 import models as ecs_20140526_models
+from alibabacloud_vpc20160428 import models as vpc_20160428_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
 from utilitys.utctime import utf_time, now_time
@@ -36,7 +37,6 @@ class aliyunEcs:
         return fields
 
     def aliyun_region_instance_ecs(self, regionId):
-        print(regionId)
         regionInstanceEcs = AliyunEcsAssets.objects.all().filter(
             regionId=regionId)
         serialize_regionInstanceEcs = json.loads(
@@ -114,6 +114,19 @@ class aliyunEcs:
             return snapDisks
         except Exception as error:
             return error
+
+    def aliyun_get_vpc(self):
+        describe_vpcs_request = vpc_20160428_models.DescribeVpcsRequest(
+            region_id='cn-shanghai')
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_vpc_api().describe_vpcs_with_options(
+                describe_vpcs_request, runtime)
+            for s in result.body.vpcs.vpc:
+                print(s)
+            return result
+        except Exception as error:
+            UtilClient.assert_as_string(error.message)
 
     def aliyun_create_single_ecs(self, args_dict):
         data_disk_0 = ecs_20140526_models.RunInstancesRequestDataDisk(

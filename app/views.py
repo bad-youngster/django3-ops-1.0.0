@@ -172,9 +172,18 @@ def mysql_to_slave(request):
 def aliyun_ecs_assets(request):
     if request.method == 'POST':
         results = json.loads(request.body)
-        region_result = aliyunEcs().aliyun_region_instance_ecs(
-            results['regionId'])
-        print(region_result)
-        
+        try:
+            region_result = aliyunEcs().aliyun_region_instance_ecs(
+                results['regionid'])
+            return JsonResponse(region_result, safe=False)
+        except Exception as error:
+            return error
+
     result = aliyunEcs().aliyun_ecs_assets()
     return JsonResponse(result, safe=False)
+
+
+def aliyun_ecs_vpc(request):
+    aliyunEcs().aliyun_get_vpc()
+
+    return JsonResponse({'status': 200})
