@@ -13,3 +13,6 @@ class aliyunTest(TestCase):
 
     def snap_single_ecs_Test(self):
         aliyunEcs().snap_single_ecs()
+    
+    def describe_instance_status_test(self):
+        aliyunEcs().describe_instance_status()

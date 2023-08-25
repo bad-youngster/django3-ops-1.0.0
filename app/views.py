@@ -141,6 +141,13 @@ def select_single_ecs(request):
         for s in result_snap_data:
             if s.get('SourceDiskType') == 'data':
                 data_snapshotId = s.get('SnapshotId')
+        result_securitys = aliyunEcs().aliyun_get_security_groups(result_body)
+        securitygroups = []
+        for s in result_securitys.body.security_groups.security_group:
+            securitygroups.append(s.security_group_id)
+        print(securitygroups)
+        result_vSwitchIds = aliyunEcs().aliyun_get_vpc_attribute(result_body)
+        result_vSwitchId = result_vSwitchIds.body.v_switch_ids.v_switch_id
         result_snap_image = aliyunEcs().aliyun_create_image(result_snap_data)
         if result_snap_image.status_code == 200:
             image_id = result_snap_image.body.image_id
@@ -150,11 +157,12 @@ def select_single_ecs(request):
             instance['InstanceType'] = i.instance_type
             instance['KeyPairName'] = i.key_pair_name
             instance['Tags'] = i.tags
-            instance['VSwitchId'] = i.vpc_attributes.v_switch_id
-            instance[
-                'SecurityGroupIds'] = i.security_group_ids.security_group_id
+            instance['VSwitchId'] = result_vSwitchId[0]
+            instance['SecurityGroupIds'] = securitygroups
             instance['imageId'] = image_id
             instance['data_snapid'] = data_snapshotId
+            instance['instanceName'] = result_body['instanceName']
+            instance['regionId'] = result_body['regionId']
             instances.append(instance)
             aliyunEcs().aliyun_create_single_ecs(instance)
 
@@ -174,7 +182,7 @@ def aliyun_ecs_assets(request):
         results = json.loads(request.body)
         try:
             region_result = aliyunEcs().aliyun_region_instance_ecs(
-                results['regionid'])
+                results['regionId'])
             return JsonResponse(region_result, safe=False)
         except Exception as error:
             return error
@@ -184,6 +192,13 @@ def aliyun_ecs_assets(request):
 
 
 def aliyun_ecs_vpc(request):
-    aliyunEcs().aliyun_get_vpc()
-
-    return JsonResponse({'status': 200})
+    result = aliyunEcs().aliyun_get_vpc()
+    vpcs = []
+    for s in result.body.vpcs.vpc:
+        vpc = {}
+        vpc['VpcName'] = s.vpc_name
+        vpc['CidrBlock'] = s.cidr_block
+        vpc['VSwitchIds'] = s.v_switch_ids.v_switch_id
+        vpc['VpcId'] = s.vpc_id
+        vpcs.append(vpc)
+    return JsonResponse(vpcs, safe=False)

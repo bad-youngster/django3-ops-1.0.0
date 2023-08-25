@@ -115,3 +115,21 @@ class AliyunDescribeRegions(models.Model):
 
     def __str__(self) -> str:
         return self.regionId
+
+
+class AliyunDescribeVpcs(models.Model):
+    cenStatus = models.CharField(verbose_name=("vpc状态"), max_length=50)
+    cidrBlock = models.CharField(verbose_name=("vpc网段"), max_length=50)
+    regionId = models.CharField(verbose_name=("实力区域id"), max_length=50)
+    resourceGroupId = models.CharField(verbose_name=("资源组id"), max_length=50)
+    tags = models.CharField(verbose_name=("标签"), max_length=500)
+    vSwitchIds = models.CharField(verbose_name=("虚拟交换机"), max_length=50)
+    vpcId = models.CharField(verbose_name=("vpc id"), max_length=50)
+    vpcName = models.CharField(verbose_name=("vpc名称"), max_length=50)
+    creationTime = models.CharField(verbose_name=("创建时间"), max_length=50)
+
+    class Meta:
+        db_table = 'aliyun_describe_vpcs'
+
+    def __str__(self) -> str:
+        return super().__str__()

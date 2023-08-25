@@ -7,6 +7,7 @@ from alibabacloud_ecs20140526 import models as ecs_20140526_models
 from alibabacloud_vpc20160428 import models as vpc_20160428_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
+from alibabacloud_tea_console.client import Client as ConsoleClient
 from utilitys.utctime import utf_time, now_time
 from app.models import AliyunEcsAssets, AliyunDescribeRegions
 from django.core.serializers import serialize
@@ -122,8 +123,30 @@ class aliyunEcs:
         try:
             result = aliyun().aliyun_vpc_api().describe_vpcs_with_options(
                 describe_vpcs_request, runtime)
-            for s in result.body.vpcs.vpc:
-                print(s)
+            return result
+        except Exception as error:
+            UtilClient.assert_as_string(error.message)
+
+    def aliyun_get_vpc_attribute(self, args_dict):
+        describe_vpc_attribute_request = vpc_20160428_models.DescribeVpcAttributeRequest(
+            region_id='cn-shanghai', vpc_id=args_dict['VpcId'])
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_vpc_api(
+            ).describe_vpc_attribute_with_options(
+                describe_vpc_attribute_request, runtime)
+            return result
+        except Exception as error:
+            UtilClient.assert_as_string(error.message)
+
+    def aliyun_get_security_groups(self, args_dict):
+        describe_security_groups_request = ecs_20140526_models.DescribeSecurityGroupsRequest(
+            region_id='cn-shanghai', vpc_id=args_dict['VpcId'])
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api(
+            ).describe_security_groups_with_options(
+                describe_security_groups_request, runtime)
             return result
         except Exception as error:
             UtilClient.assert_as_string(error.message)
@@ -134,9 +157,9 @@ class aliyunEcs:
         system_disk = ecs_20140526_models.RunInstancesRequestSystemDisk(
             category='cloud_essd', size='40', performance_level='PL0')
         run_instances_request = ecs_20140526_models.RunInstancesRequest(
-            region_id='cn-shanghai',
+            region_id=args_dict['regionId'],
             system_disk=system_disk,
-            instance_name='ttttttttttest',
+            instance_name=args_dict['instanceName'],
             instance_type=args_dict['InstanceType'],
             data_disk=[data_disk_0],
             key_pair_name=args_dict['KeyPairName'],
@@ -147,6 +170,7 @@ class aliyunEcs:
             period_unit='Month',
             auto_renew=False,
         )
+        print(run_instances_request)
         runtime = util_models.RuntimeOptions()
         try:
             result = aliyun().aliyun_ecs_api().run_instances_with_options(
@@ -154,3 +178,46 @@ class aliyunEcs:
             return result
         except Exception as error:
             print(error)
+
+    def await_instance_status_to_running():
+        """
+        等待实例状态为 Running
+        """
+        time = 0
+        flag = True
+        while flag and NumberClient.lt(time, 10):
+            flag = False
+            instance_status_list = aliyun().aliyun_ecs_api(
+            ).describe_instance_status(client, region_id, instance_ids)
+            for instance_status in instance_status_list:
+                if not UtilClient.equal_string(instance_status, 'Running'):
+                    UtilClient.sleep(2000)
+                    flag = True
+            time = NumberClient.add(time, 1)
+        return NumberClient.lt(time, 10)
+
+    def describe_instance_status(self):
+        """
+        查询实例状态
+        """
+        region_id = 'cn-shanghai'
+        instance_ids = 'i-uf6fwo1b573botpg35cz'
+
+        request = ecs_20140526_models.DescribeInstanceStatusRequest(
+            region_id=region_id, instance_id=['i-uf6fwo1b573botpg35cz'])
+        ConsoleClient.log(f'实例: {instance_ids}, 查询状态开始。')
+        runtime = util_models.RuntimeOptions()
+        try:
+            responces = aliyun().aliyun_ecs_api(
+            ).describe_instance_status_with_options(request, runtime)
+            instance_status_list = responces.body.instance_statuses.instance_status
+            ConsoleClient.log(
+                f'实例: {instance_ids}, 查询状态成功。状态为: {UtilClient.to_jsonstring(instance_status_list)}'
+            )
+            status_list = {}
+            for instance_status in instance_status_list:
+                status_list['InstanceId'] = instance_status.instance_id
+                status_list['Status'] = instance_status.status
+            return status_list
+        except Exception as error:
+            return error
