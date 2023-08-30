@@ -202,3 +202,8 @@ def aliyun_ecs_vpc(request):
         vpc['VpcId'] = s.vpc_id
         vpcs.append(vpc)
     return JsonResponse(vpcs, safe=False)
+
+
+def aliyun_ecs_instances_status(request):
+    aliyunEcs().await_instance_status_to_running()
+    return JsonResponse({'status': 200})

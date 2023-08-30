@@ -2,7 +2,7 @@
 # @Time  : 2023/08/07 13:30:39
 # @Author: wy
 from django.urls import path
-from .views import nexus_infofile, mysql_install, user_add, user_get, nexus_mysql_script, mysql_to_slave, select_single_ecs, get_single_ecs, aliyun_ecs_assets, get_describe_regions, aliyun_ecs_vpc
+from .views import nexus_infofile, mysql_install, user_add, user_get, nexus_mysql_script, mysql_to_slave, select_single_ecs, get_single_ecs, aliyun_ecs_assets, get_describe_regions, aliyun_ecs_vpc, aliyun_ecs_instances_status
 
 urlpatterns = [
     path('nexusInfofile/', nexus_infofile, name='nexusInfofile'),
@@ -17,5 +17,8 @@ urlpatterns = [
     path('userAdd/', user_add, name='useradd'),
     path('userGet/', user_get, name='userGet'),
     path('aliyunEcsAssets/', aliyun_ecs_assets, name='aliyunEcsAssets'),
-    path('aliyunEcsVpc/', aliyun_ecs_vpc, name='aliyunEcsVpc')
+    path('aliyunEcsVpc/', aliyun_ecs_vpc, name='aliyunEcsVpc'),
+    path('aliyunEcsInstancesStatus/',
+         aliyun_ecs_instances_status,
+         name='aliyunEcsInstancesStatus')
 ]

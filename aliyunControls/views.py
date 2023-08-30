@@ -2,6 +2,7 @@
 # @Time  : 2023/08/15 16:20:13
 # @Author: wy
 
+from time import sleep
 from utilitys.aliyunapi import aliyun
 from alibabacloud_ecs20140526 import models as ecs_20140526_models
 from alibabacloud_vpc20160428 import models as vpc_20160428_models
@@ -9,6 +10,7 @@ from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_tea_console.client import Client as ConsoleClient
 from utilitys.utctime import utf_time, now_time
+from utilitys.base64code import uncode
 from app.models import AliyunEcsAssets, AliyunDescribeRegions
 from django.core.serializers import serialize
 import json
@@ -179,22 +181,24 @@ class aliyunEcs:
         except Exception as error:
             print(error)
 
-    def await_instance_status_to_running():
-        """
-        等待实例状态为 Running
-        """
-        time = 0
+    def await_instance_status_to_running(self):
         flag = True
-        while flag and NumberClient.lt(time, 10):
+        describe_instance_status_request = ecs_20140526_models.DescribeInstanceStatusRequest(
+            region_id='cn-shanghai', instance_id=['i-uf670zp0t9e6x1ai2j8i'])
+        runtime = util_models.RuntimeOptions()
+        while flag:
             flag = False
             instance_status_list = aliyun().aliyun_ecs_api(
-            ).describe_instance_status(client, region_id, instance_ids)
-            for instance_status in instance_status_list:
-                if not UtilClient.equal_string(instance_status, 'Running'):
-                    UtilClient.sleep(2000)
+            ).describe_instance_status_with_options(
+                describe_instance_status_request, runtime)
+            for instance_status in instance_status_list.body.instance_statuses.instance_status:
+                ConsoleClient.log(f'实例状态：{instance_status.status}')
+                if instance_status.status != 'Running':
+                    sleep(200)
                     flag = True
-            time = NumberClient.add(time, 1)
-        return NumberClient.lt(time, 10)
+        return flag
+
+        # return
 
     def describe_instance_status(self):
         """
@@ -214,10 +218,51 @@ class aliyunEcs:
             ConsoleClient.log(
                 f'实例: {instance_ids}, 查询状态成功。状态为: {UtilClient.to_jsonstring(instance_status_list)}'
             )
-            status_list = {}
-            for instance_status in instance_status_list:
-                status_list['InstanceId'] = instance_status.instance_id
-                status_list['Status'] = instance_status.status
-            return status_list
+            return instance_status_list
         except Exception as error:
             return error
+
+    def aliyun_invoke_command(self):
+        invoke_command_request = ecs_20140526_models.InvokeCommandRequest(
+            region_id='cn-shanghai',
+            command_id='c-sh03usaqvr6gg74',
+            instance_id=['i-uf670zp0t9e6x1ai2j8i'])
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api().invoke_command_with_options(
+                invoke_command_request, runtime)
+            return result.body.invoke_id
+        except Exception as error:
+            ConsoleClient.log(f'{error}')
+
+    def aliyun_describe_invocation_results(self):
+        instance_id = ['i-uf670zp0t9e6x1ai2j8i']
+        invoke_id = aliyunEcs().aliyun_invoke_command()
+        sleep(20)
+        describe_invocation_results_request = ecs_20140526_models.DescribeInvocationResultsRequest(
+            region_id='cn-shanghai', invoke_id=invoke_id)
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api(
+            ).describe_invocation_results_with_options(
+                describe_invocation_results_request, runtime)
+            for s in result.body.invocation.invocation_results.invocation_result:
+                if s.error_code == '':
+                    reboot_result = aliyunEcs().aliyun_reboot_instances(
+                        instance_id)
+                    print(s.invocation_status)
+                else:
+                    print(s.error_code)
+        except Exception as error:
+            ConsoleClient.log(f'{error}')
+
+    def aliyun_reboot_instances(self, instance_id):
+        reboot_instances_request = ecs_20140526_models.RebootInstancesRequest(
+            region_id='cn-shanghai', instance_id=instance_id)
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api().reboot_instances_with_options(
+                reboot_instances_request, runtime)
+            print(result)
+        except Exception as error:
+            UtilClient.assert_as_string(error.message)
