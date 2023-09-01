@@ -29,3 +29,9 @@ class aliyunInvokeTest(TestCase):
     def aliyunRebootinstance(self):
         instance_id = ['i-uf670zp0t9e6x1ai2j8i']
         aliyunEcs().aliyun_reboot_instances(instance_id=instance_id)
+
+    def aliyunStopInstance(self):
+        aliyunEcs().aliyun_stop_instance()
+
+    def aliyunMain(self):
+        aliyunEcs().main()

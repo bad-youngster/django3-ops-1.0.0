@@ -97,6 +97,7 @@ class AliyunEcsAssets(models.Model):
     zoneId = models.CharField(verbose_name=("地区id"), max_length=50)
     tags = models.CharField(verbose_name=("标签"), max_length=500)
     securityGroupIds = models.CharField(verbose_name=("安全组id"), max_length=500)
+    description = models.CharField(verbose_name=("描述"), max_length=50,default='slave')
 
     class Meta:
         db_table = 'aliyun_ecs_assets'

@@ -181,10 +181,10 @@ class aliyunEcs:
         except Exception as error:
             print(error)
 
-    def await_instance_status_to_running(self):
+    def await_instance_status_to_running(self, instance_id):
         flag = True
         describe_instance_status_request = ecs_20140526_models.DescribeInstanceStatusRequest(
-            region_id='cn-shanghai', instance_id=['i-uf670zp0t9e6x1ai2j8i'])
+            region_id='cn-shanghai', instance_id=instance_id)
         runtime = util_models.RuntimeOptions()
         while flag:
             flag = False
@@ -205,10 +205,10 @@ class aliyunEcs:
         查询实例状态
         """
         region_id = 'cn-shanghai'
-        instance_ids = 'i-uf6fwo1b573botpg35cz'
+        instance_ids = ['i-uf670zp0t9e6x1ai2j8i']
 
         request = ecs_20140526_models.DescribeInstanceStatusRequest(
-            region_id=region_id, instance_id=['i-uf6fwo1b573botpg35cz'])
+            region_id=region_id, instance_id=instance_ids)
         ConsoleClient.log(f'实例: {instance_ids}, 查询状态开始。')
         runtime = util_models.RuntimeOptions()
         try:
@@ -218,14 +218,14 @@ class aliyunEcs:
             ConsoleClient.log(
                 f'实例: {instance_ids}, 查询状态成功。状态为: {UtilClient.to_jsonstring(instance_status_list)}'
             )
-            return instance_status_list
+            return UtilClient.to_jsonstring(instance_status_list)
         except Exception as error:
             return error
 
-    def aliyun_invoke_command(self):
+    def aliyun_invoke_command(self, command_id):
         invoke_command_request = ecs_20140526_models.InvokeCommandRequest(
             region_id='cn-shanghai',
-            command_id='c-sh03usaqvr6gg74',
+            command_id=command_id,
             instance_id=['i-uf670zp0t9e6x1ai2j8i'])
         runtime = util_models.RuntimeOptions()
         try:
@@ -235,9 +235,8 @@ class aliyunEcs:
         except Exception as error:
             ConsoleClient.log(f'{error}')
 
-    def aliyun_describe_invocation_results(self):
-        instance_id = ['i-uf670zp0t9e6x1ai2j8i']
-        invoke_id = aliyunEcs().aliyun_invoke_command()
+    def aliyun_describe_invocation_results(self, invoke_id):
+        invoke_id = invoke_id
         sleep(20)
         describe_invocation_results_request = ecs_20140526_models.DescribeInvocationResultsRequest(
             region_id='cn-shanghai', invoke_id=invoke_id)
@@ -246,15 +245,32 @@ class aliyunEcs:
             result = aliyun().aliyun_ecs_api(
             ).describe_invocation_results_with_options(
                 describe_invocation_results_request, runtime)
-            for s in result.body.invocation.invocation_results.invocation_result:
-                if s.error_code == '':
-                    reboot_result = aliyunEcs().aliyun_reboot_instances(
-                        instance_id)
-                    print(s.invocation_status)
-                else:
-                    print(s.error_code)
+            return UtilClient.to_jsonstring(
+                result.body.invocation.invocation_results.invocation_result)
         except Exception as error:
             ConsoleClient.log(f'{error}')
+
+    def aliyun_stop_instance(self, instance_id):
+        stop_instance_request = ecs_20140526_models.StopInstanceRequest(
+            instance_id=instance_id)
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api().stop_instance_with_options(
+                stop_instance_request, runtime)
+            return result
+        except Exception as error:
+            UtilClient.assert_as_string(error.message)
+
+    def aliyun_start_instance(self, instance_id):
+        start_instance_request = ecs_20140526_models.StartInstanceRequest(
+            instance_id=instance_id)
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api().start_instance_with_options(
+                start_instance_request, runtime)
+            return result
+        except Exception as error:
+            UtilClient.assert_as_string(error.message)
 
     def aliyun_reboot_instances(self, instance_id):
         reboot_instances_request = ecs_20140526_models.RebootInstancesRequest(
@@ -263,6 +279,46 @@ class aliyunEcs:
         try:
             result = aliyun().aliyun_ecs_api().reboot_instances_with_options(
                 reboot_instances_request, runtime)
-            print(result)
+            return result
         except Exception as error:
             UtilClient.assert_as_string(error.message)
+
+    def aliyun_modify_instance_vpc_attribute(self, instance_id, vpc_id,
+                                             v_switch_id, security_group_id):
+        modify_instance_vpc_attribute_request = ecs_20140526_models.ModifyInstanceVpcAttributeRequest(
+            instance_id=instance_id,
+            vpc_id=vpc_id,
+            v_switch_id=v_switch_id,
+            security_group_id=security_group_id)
+        runtime = util_models.RuntimeOptions()
+        try:
+            result = aliyun().aliyun_ecs_api(
+            ).modify_instance_vpc_attribute_with_options(
+                modify_instance_vpc_attribute_request, runtime)
+            return result
+
+        except Exception as error:
+            UtilClient.assert_as_string(error.message)
+
+    def main(self):
+        aliyunEcs().await_instance_status_to_running(
+            instance_id=['i-uf670zp0t9e6x1ai2j8i'])
+        invoke_id = aliyunEcs().aliyun_invoke_command(
+            command_id='c-sh03usaqvr6gg74')
+        aliyunEcs().aliyun_describe_invocation_results(invoke_id=invoke_id)
+        aliyunEcs().aliyun_stop_instance(instance_id='i-uf670zp0t9e6x1ai2j8i')
+        aliyunEcs().describe_instance_status()
+        sleep(20)
+        aliyunEcs().aliyun_modify_instance_vpc_attribute(
+            instance_id='i-uf670zp0t9e6x1ai2j8i',
+            vpc_id='vpc-uf6lumr9mgrgu5uhr14ca',
+            v_switch_id='vsw-uf6vgn14dmiginzidlgt9',
+            security_group_id=['sg-uf6af54caswr420c113r'])
+        sleep(20)
+        aliyunEcs().aliyun_start_instance(instance_id='i-uf670zp0t9e6x1ai2j8i')
+        sleep(20)
+        aliyunEcs().await_instance_status_to_running(
+            instance_id=['i-uf670zp0t9e6x1ai2j8i'])
+        aliyunEcs().aliyun_invoke_command(command_id='c-sh03usaqvr6gg74')
+        aliyunEcs().aliyun_reboot_instances(
+            instance_id='i-uf670zp0t9e6x1ai2j8i')
