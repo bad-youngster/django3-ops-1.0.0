@@ -192,13 +192,28 @@ class aliyunEcs:
             ).describe_instance_status_with_options(
                 describe_instance_status_request, runtime)
             for instance_status in instance_status_list.body.instance_statuses.instance_status:
-                ConsoleClient.log(f'实例状态：{instance_status.status}')
+                ConsoleClient.log(f'实例状态 start：{instance_status.status}')
                 if instance_status.status != 'Running':
-                    sleep(200)
+                    sleep(20)
                     flag = True
         return flag
 
-        # return
+    def await_instance_status_to_stoping(self, instance_id):
+        describe_instance_status_request = ecs_20140526_models.DescribeInstanceStatusRequest(
+            region_id='cn-shanghai', instance_id=instance_id)
+        runtime = util_models.RuntimeOptions()
+        flag = True
+        while flag:
+            flag = False
+            instance_status_list = aliyun().aliyun_ecs_api(
+            ).describe_instance_status_with_options(
+                describe_instance_status_request, runtime)
+            for instance_status in instance_status_list.body.instance_statuses.instance_status:
+                ConsoleClient.log(f'实例状态 stop：{instance_status.status}')
+                if instance_status.status != 'Stopped':
+                    sleep(20)
+                    flag = True
+        return flag
 
     def describe_instance_status(self):
         """
@@ -216,7 +231,7 @@ class aliyunEcs:
             ).describe_instance_status_with_options(request, runtime)
             instance_status_list = responces.body.instance_statuses.instance_status
             ConsoleClient.log(
-                f'实例: {instance_ids}, 查询状态成功。状态为: {UtilClient.to_jsonstring(instance_status_list)}'
+                f'实例: {instance_ids}, 查询状态成功。{instance_ids}状态为: {UtilClient.to_jsonstring(instance_status_list)}'
             )
             return UtilClient.to_jsonstring(instance_status_list)
         except Exception as error:
@@ -231,13 +246,13 @@ class aliyunEcs:
         try:
             result = aliyun().aliyun_ecs_api().invoke_command_with_options(
                 invoke_command_request, runtime)
+            print(result)
             return result.body.invoke_id
         except Exception as error:
             ConsoleClient.log(f'{error}')
 
     def aliyun_describe_invocation_results(self, invoke_id):
         invoke_id = invoke_id
-        sleep(20)
         describe_invocation_results_request = ecs_20140526_models.DescribeInvocationResultsRequest(
             region_id='cn-shanghai', invoke_id=invoke_id)
         runtime = util_models.RuntimeOptions()
@@ -305,18 +320,19 @@ class aliyunEcs:
             instance_id=['i-uf670zp0t9e6x1ai2j8i'])
         invoke_id = aliyunEcs().aliyun_invoke_command(
             command_id='c-sh03usaqvr6gg74')
-        aliyunEcs().aliyun_describe_invocation_results(invoke_id=invoke_id)
-        aliyunEcs().aliyun_stop_instance(instance_id='i-uf670zp0t9e6x1ai2j8i')
-        aliyunEcs().describe_instance_status()
-        sleep(20)
-        aliyunEcs().aliyun_modify_instance_vpc_attribute(
+        invocation_results = aliyunEcs().aliyun_describe_invocation_results(
+            invoke_id=invoke_id)
+        stop_instance = aliyunEcs().aliyun_stop_instance(
+            instance_id='i-uf670zp0t9e6x1ai2j8i')
+        instance_status = aliyunEcs().await_instance_status_to_stoping(
+            instance_id=['i-uf670zp0t9e6x1ai2j8i'])
+        instance_vpc_attribute = aliyunEcs(
+        ).aliyun_modify_instance_vpc_attribute(
             instance_id='i-uf670zp0t9e6x1ai2j8i',
             vpc_id='vpc-uf6lumr9mgrgu5uhr14ca',
             v_switch_id='vsw-uf6vgn14dmiginzidlgt9',
             security_group_id=['sg-uf6af54caswr420c113r'])
-        sleep(20)
         aliyunEcs().aliyun_start_instance(instance_id='i-uf670zp0t9e6x1ai2j8i')
-        sleep(20)
         aliyunEcs().await_instance_status_to_running(
             instance_id=['i-uf670zp0t9e6x1ai2j8i'])
         aliyunEcs().aliyun_invoke_command(command_id='c-sh03usaqvr6gg74')
