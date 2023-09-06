@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from aliyunControls.views import aliyunEcs
+from aliyunControls.aliyunMysqlViews import aliyunEcs
 from app.mysqlInstall.mysqlInstall import Mysql
 from nexusControls.views import NexusStore
 import json
@@ -135,6 +135,7 @@ def get_describe_regions(request):
 def select_single_ecs(request):
     if request.method == 'POST':
         result_body = json.loads(request.body)
+        print(result_body)
         result_data = aliyunEcs().aliyun_select_single_ecs(result_body)
         result_instances = result_data.body.instances.instance
         result_snap_data = aliyunEcs().select_snapshots_single_ecs(result_body)
@@ -145,7 +146,6 @@ def select_single_ecs(request):
         securitygroups = []
         for s in result_securitys.body.security_groups.security_group:
             securitygroups.append(s.security_group_id)
-        print(securitygroups)
         result_vSwitchIds = aliyunEcs().aliyun_get_vpc_attribute(result_body)
         result_vSwitchId = result_vSwitchIds.body.v_switch_ids.v_switch_id
         result_snap_image = aliyunEcs().aliyun_create_image(result_snap_data)

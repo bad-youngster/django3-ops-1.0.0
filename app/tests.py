@@ -2,7 +2,8 @@ from django.test import TestCase
 
 from utilitys.aliyunapi import aliyun
 from app.views import aliyunEcs
-from aliyunControls.views import aliyunEcs
+from aliyunControls.aliyunMysqlViews import aliyunEcs
+from aliyunControls.aliyunRedisViews import aliyunRedis
 # Create your tests here.
 
 
@@ -36,3 +37,12 @@ class aliyunInvokeTest(TestCase):
 
     def aliyunMain(self):
         aliyunEcs().main()
+
+
+class aliyunRedisTest(TestCase):
+
+    def aliyunDescribeInstanceAttribute(self):
+        aliyunRedis().aliyun_describe_instance_attribute()
+    
+    def aliyunDescribeAvailableResource(self):
+        aliyunRedis().aliyun_upgrade_describe_available_resource()

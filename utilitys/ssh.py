@@ -2,10 +2,7 @@
 # @Time  : 2023/08/08 17:02:33
 # @Author: wy
 from paramiko import Transport, SFTPClient
-from paramiko.client import SSHClient, AutoAddPolicy
-from paramiko.rsakey import RSAKey
-from paramiko.auth_handler import AuthHandler
-from paramiko.ssh_exception import AuthenticationException, SSHException
+from paramiko.client import SSHClient
 from utilitys.unicode_utils import to_str
 
 

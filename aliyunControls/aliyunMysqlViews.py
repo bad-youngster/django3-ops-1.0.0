@@ -10,7 +10,6 @@ from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_tea_console.client import Client as ConsoleClient
 from utilitys.utctime import utf_time, now_time
-from utilitys.base64code import uncode
 from app.models import AliyunEcsAssets, AliyunDescribeRegions
 from django.core.serializers import serialize
 import json
@@ -155,7 +154,7 @@ class aliyunEcs:
 
     def aliyun_create_single_ecs(self, args_dict):
         data_disk_0 = ecs_20140526_models.RunInstancesRequestDataDisk(
-            snapshot_id=args_dict['data_snapid'])
+            snapshot_id=args_dict['data_snapid'], category='cloud_essd')
         system_disk = ecs_20140526_models.RunInstancesRequestSystemDisk(
             category='cloud_essd', size='40', performance_level='PL0')
         run_instances_request = ecs_20140526_models.RunInstancesRequest(
@@ -172,11 +171,11 @@ class aliyunEcs:
             period_unit='Month',
             auto_renew=False,
         )
-        print(run_instances_request)
         runtime = util_models.RuntimeOptions()
         try:
             result = aliyun().aliyun_ecs_api().run_instances_with_options(
                 run_instances_request, runtime)
+            instance_id = result.body.instance_id_sets.instance_id_set
             return result
         except Exception as error:
             print(error)
@@ -315,7 +314,7 @@ class aliyunEcs:
         except Exception as error:
             UtilClient.assert_as_string(error.message)
 
-    def main(self):
+    def main(self,args_dict):
         aliyunEcs().await_instance_status_to_running(
             instance_id=['i-uf670zp0t9e6x1ai2j8i'])
         invoke_id = aliyunEcs().aliyun_invoke_command(
